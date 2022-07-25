@@ -1,4 +1,8 @@
 .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -6,12 +10,12 @@
 }
 
 .textWrapper {
-    min-height: 100%;
-    /* margin: 25% auto; */
+    z-index: 2;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    height: 75%;
     width: 100%;
 }
 .background .middle {
@@ -36,6 +40,22 @@
     top: 1rem;
     animation: fadeFromBottom 1.6s forwards;
     animation-delay: calc(var(--fadeoffset) * 200ms);
+}
+
+.container .middle {
+    position: relative;
+    bottom: 1rem;
+    font-weight: 100;
+    font-weight: 300;
+    font-size: 1rem;
+    opacity: 0.25;
+    animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeFromTop {
@@ -74,6 +94,76 @@
     background-repeat: no-repeat;
     filter: blur(5.5px);
     transform: scale(1.1);
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.container {
+    opacity: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* bottom: 7rem; */
+    width: 100%;
+    height: 24px;
+    z-index: 2;
+    animation: fadeFromBottom 1.6s forwards;
+    animation-delay: calc(var(--fadeoffset) * 200ms);
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
 }
 
 @media (max-width: 600px) {

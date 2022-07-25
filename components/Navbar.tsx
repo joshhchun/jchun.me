@@ -5,7 +5,11 @@ export default function Navbar() {
         <div className={styles.navbar}>
             <div
                 className={styles.tab}
-                style={{ ["--fadeoffset" as any]: 3.0, fontSize: "1.5rem" }}
+                style={{
+                    ["--fadeoffset" as any]: 3.0,
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                }}
             >
                 jchun
             </div>

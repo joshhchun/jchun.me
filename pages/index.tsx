@@ -9,9 +9,7 @@ const Home: NextPage = () => {
         <div className={styles.background}>
             <Navbar />
             <div className={styles.textWrapper}>
-                <div className={styles.middle} fade-offset="1.2">
-                    My name is Josh Chun
-                </div>
+                <div className={styles.middle}>My name is Josh Chun</div>
                 <div
                     className={styles.middle}
                     id={styles.bottom}
@@ -21,6 +19,15 @@ const Home: NextPage = () => {
                     studying Computer Science. An advocate for Web Development,
                     UNIX, Machine Learning, and pineapple on pizza.
                 </div>
+            </div>
+            <div
+                className={styles.container}
+                style={{ ["--fadeoffset" as any]: 3.0 }}
+            >
+                <div className={styles.chevron}></div>
+                <div className={styles.chevron}></div>
+                <div className={styles.chevron}></div>
+                <div className={styles.middle}>Scroll Down</div>
             </div>
         </div>
     );
