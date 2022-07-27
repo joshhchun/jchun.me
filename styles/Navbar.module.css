@@ -66,3 +66,17 @@
         transform: translateY(0);
     }
 }
+
+/* Make font size smaller if user is on phone  */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 2rem;
+    }
+    .tabs {
+        gap: 0.8rem;
+        right: 2rem;
+    }
+    .navbar .tab {
+        font-size: 0.6rem;
+    }
+}

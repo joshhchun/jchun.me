@@ -4,9 +4,35 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     overflow: hidden;
+    /* height: 100vh; */
+    /* scroll-snap-align: start; */
+}
+
+.background:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5.5px) brightness(95%) saturate(120%);
+    transform: scale(1.1);
+}
+
+#two:after {
+    background-image: url("/bigsur.jpg");
+}
+
+#three:after {
+    background-image: url("/laguna.jpg");
 }
 
 .textWrapper {
@@ -33,9 +59,9 @@
 #bottom {
     opacity: 0;
     font-weight: normal;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    width: 60%;
+    width: 80%;
     position: relative;
     top: 1rem;
     animation: fadeFromBottom 1.6s forwards;
@@ -80,20 +106,10 @@
     }
 }
 
-.background:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("/background.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(5.5px);
-    transform: scale(1.1);
+.scroll {
+    /* height: 100vh; */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .chevron {
@@ -115,7 +131,7 @@
     width: 100%;
     height: 24px;
     z-index: 2;
-    animation: fadeFromBottom 1.6s forwards;
+    animation: fadeFromBottom 1.6s forwards, bounce 1.6s ease-in-out infinite;
     animation-delay: calc(var(--fadeoffset) * 200ms);
 }
 
@@ -166,6 +182,18 @@
     }
 }
 
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 600px) {
     .grid {
         width: 100%;
@@ -183,5 +211,12 @@
     }
     .logo img {
         filter: invert(1);
+    }
+}
+
+/* Make font size smaller if user is on phone  */
+@media (max-width: 600px) {
+    .background .middle {
+        font-size: 2rem;
     }
 }
