@@ -3,35 +3,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    /* width: 100vw; */
+    /* position: relative; */
     height: 100vh;
     overflow: hidden;
-    /* height: 100vh; */
-    /* scroll-snap-align: start; */
-}
-
-.background:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("/background.jpg");
+    background-image: url("/background_.jpg");
+    filter: brightness(95%) saturate(120%);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(5.5px) brightness(95%) saturate(120%);
-    transform: scale(1.1);
 }
 
-#two:after {
+#two {
     background-image: url("/bigsur.jpg");
 }
 
-#three:after {
+#three {
     background-image: url("/laguna.jpg");
 }
 

@@ -22,10 +22,4 @@ const Home: NextPage = () => {
     );
 };
 
-export async function getStaticProps() {
-    return {
-        props: { "/background.jpg": {}, "/bigsur.jpg": {} },
-    };
-}
-
 export default Home;

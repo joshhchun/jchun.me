@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const Second = () => {
     const [ref, inView] = useInView({
-        threshold: 0.7,
+        threshold: 0.6,
     });
     return (
         <div ref={ref}>
