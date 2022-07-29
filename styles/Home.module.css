@@ -44,6 +44,7 @@
 
 #bottom {
     opacity: 0;
+    text-shadow: 2px 2px 12px #000000;
     font-weight: normal;
     font-size: 1.3rem;
     font-weight: 300;
@@ -62,6 +63,21 @@
     font-size: 1rem;
     opacity: 0.25;
     animation: pulse 2s linear alternate infinite;
+}
+
+#middleTwo {
+    animation: fadeFromLeft 1.2s forwards;
+}
+
+@keyframes fadeFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes pulse {
@@ -204,5 +220,60 @@
 @media (max-width: 600px) {
     .background .middle {
         font-size: 2rem;
+    }
+}
+
+.tabs {
+    /* position: absolute; */
+    /* right: 4rem;/ */
+    position: relative;
+    top: 3rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 2;
+    /* width: 100%; */
+    height: 5rem;
+}
+
+.tab {
+    opacity: 0;
+    text-shadow: 2px 2px 12px #000000;
+    animation: fadeFromBottom 1.2s forwards;
+    animation-delay: calc(var(--fadeoffset) * 200ms);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Underline text when hovered over */
+.tab:hover {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@keyframes fadeFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -1,8 +1,8 @@
 import styles from "../styles/Navbar.module.css";
 
-export default function Navbar() {
+export default function Navbar(props: { className?: string }) {
     return (
-        <div className={styles.navbar}>
+        <div className={props.className}>
             <div
                 className={styles.tab}
                 style={{

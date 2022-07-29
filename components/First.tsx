@@ -1,11 +1,27 @@
 import styles from "../styles/Home.module.css";
 import { Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
+import Navbar from "./Navbar";
+import { useEffect, useState } from "react";
 
 const First = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
     const [ref, inView] = useInView({
         threshold: 0.6,
     });
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <div ref={ref}>
             <Scene pin>
@@ -21,10 +37,55 @@ const First = () => {
                                     id={styles.bottom}
                                     style={{ ["--fadeoffset" as any]: 3.0 }}
                                 >
-                                    {` I'm currently a student at the University of Notre Dame
-                        studying Computer Science. An advocate for Web
+                                    {` Studying Computer Science @ Notre Dame and an advocate for Web
                         Development, UNIX, Machine Learning, and pineapple on
                         pizza. `}
+                                </div>
+                                <div className={styles.tabs}>
+                                    <div
+                                        className={styles.tab}
+                                        style={{
+                                            ["--fadeoffset" as any]: 3.0,
+                                        }}
+                                        onClick={() => {
+                                            window.scrollTo({
+                                                top: 910,
+                                                behavior: "smooth",
+                                            });
+                                        }}
+                                    >
+                                        Projects
+                                    </div>
+                                    <div
+                                        className={styles.tab}
+                                        style={{
+                                            ["--fadeoffset" as any]: 4.0,
+                                        }}
+                                        onClick={() => {
+                                            window.scrollTo({
+                                                top: 1820,
+                                                behavior: "smooth",
+                                            });
+                                        }}
+                                    >
+                                        Skills
+                                    </div>
+                                    <div
+                                        className={styles.tab}
+                                        style={{
+                                            ["--fadeoffset" as any]: 5.0,
+                                        }}
+                                    >
+                                        Experience
+                                    </div>
+                                    <div
+                                        className={styles.tab}
+                                        style={{
+                                            ["--fadeoffset" as any]: 6.0,
+                                        }}
+                                    >
+                                        Blog
+                                    </div>
                                 </div>
                             </div>
                             <div
