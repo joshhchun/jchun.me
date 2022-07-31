@@ -15,23 +15,6 @@
     padding: 0 4rem;
 }
 
-.transout {
-    animation: fadeOut 1s forwards;
-    opacity: 1;
-    /* animation-duration: 5s; */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    font-weight: normal;
-    background-color: rgba(59, 70, 78, 0.3);
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    padding: 0 4rem;
-}
-
 .hidden {
     opacity: 1;
     animation: fadeOff 1s forwards;
@@ -111,14 +94,16 @@
 
 /* Make font size smaller if user is on phone  */
 @media (max-width: 600px) {
-    .navbar {
+    .navbar,
+    .hidden {
         padding: 0 2rem;
     }
     .tabs {
         gap: 0.8rem;
         right: 2rem;
     }
-    .navbar .tab {
+    .navbar .tab,
+    .hidden .tab {
         font-size: 0.6rem;
     }
 }

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Second from "../components/Second";
 import Third from "../components/Third";
 import First from "../components/First";
+import About from "../components/About";
 import { Controller } from "react-scrollmagic";
 import { useEffect, useState } from "react";
 import styles from "../styles/Navbar.module.css";
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
-        if (position > 200) {
+        if (position > 280) {
             setNavInView(true);
         }
     };
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
             <Head>
                 <title>jchun | Home</title>
             </Head>
-            {scrollPosition > 200 ? (
+            {scrollPosition > 280 ? (
                 <Navbar className={styles.navbar} />
             ) : navInView ? (
                 <Navbar className={styles.hidden} />
@@ -45,12 +46,11 @@ const Home: NextPage = () => {
                         right: 0,
                         zIndex: "2",
                     }}
-                >
-                    HI
-                </div>
+                ></div>
             )}
             <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
                 <First />
+                <About />
                 <Second />
                 <Third />
             </Controller>

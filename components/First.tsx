@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const First = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [ref, inView] = useInView({
-        threshold: 0.6,
+        threshold: 0.4,
     });
 
     const handleScroll = () => {
@@ -48,10 +48,11 @@ const First = () => {
                                             ["--fadeoffset" as any]: 3.0,
                                         }}
                                         onClick={() => {
-                                            window.scrollTo({
-                                                top: 910,
-                                                behavior: "smooth",
-                                            });
+                                            document
+                                                .getElementById("first")
+                                                ?.scrollIntoView({
+                                                    behavior: "smooth",
+                                                });
                                         }}
                                     >
                                         Projects
@@ -62,10 +63,11 @@ const First = () => {
                                             ["--fadeoffset" as any]: 4.0,
                                         }}
                                         onClick={() => {
-                                            window.scrollTo({
-                                                top: 1820,
-                                                behavior: "smooth",
-                                            });
+                                            document
+                                                .getElementById("second")
+                                                ?.scrollIntoView({
+                                                    behavior: "smooth",
+                                                });
                                         }}
                                     >
                                         Skills
