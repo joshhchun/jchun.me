@@ -70,10 +70,16 @@ const Second = () => {
                                                 key={index}
                                             >
                                                 <div
-                                                    className={styles.name}
-                                                    key={skill.type}
+                                                    className={
+                                                        styles.nameContainer
+                                                    }
                                                 >
-                                                    {skill.type}
+                                                    <div
+                                                        className={styles.name}
+                                                        key={skill.type}
+                                                    >
+                                                        {skill.type}
+                                                    </div>
                                                 </div>
                                                 <div
                                                     className={
@@ -105,10 +111,16 @@ const Second = () => {
                                                 key={index}
                                             >
                                                 <div
-                                                    className={styles.name}
-                                                    key={skill.type}
+                                                    className={
+                                                        styles.nameContainer
+                                                    }
                                                 >
-                                                    {skill.type}
+                                                    <div
+                                                        className={styles.name}
+                                                        key={skill.type}
+                                                    >
+                                                        {skill.type}
+                                                    </div>
                                                 </div>
                                                 <div
                                                     className={

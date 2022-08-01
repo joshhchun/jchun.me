@@ -27,9 +27,10 @@
     display: flex;
     flex-direction: column;
     /* justify-content: ; */
-    align-items: left;
+    align-items: center;
+    /* justify-content: center; */
     position: relative;
-    left: 6%;
+    /* left: 6%; */
     height: 80%;
     gap: 1rem;
 }
@@ -40,12 +41,14 @@
 }
 .nameContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     flex-direction: column;
-    width: 30%;
+    width: 70%;
 }
+
 .name {
+    text-align: start;
     font-size: 1.2rem;
     font-weight: bold;
     z-index: 2;
@@ -56,6 +59,7 @@
 .skill {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     animation: fadeFromTop 1.2s;
     gap: 1rem;
@@ -96,8 +100,8 @@
     z-index: 2;
     display: flex;
     flex-direction: row;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
     height: 75%;
     width: 100%;
 }
@@ -111,6 +115,12 @@
     font-weight: bold;
     z-index: 2;
     color: #ffffff;
+}
+
+#middleAbouth1 {
+    display: flex;
+    justify-content: left;
+    /* align-items: left; */
 }
 
 #bottom {
@@ -127,12 +137,24 @@
 }
 
 #aboutTextWrapper {
-    /* position: relative; */
-    /* top: 5rem; */
-    gap: 5rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 60%;
+    margin-left: 5%;
+    margin-right: 10%;
+    gap: 2rem;
+    /* animation: fadeFromLeft 1.2s forwards;
+    animation-delay: calc(var(--fadeoffset) * 200ms); */
 }
 
 #middleAbout {
@@ -141,27 +163,18 @@
     font-weight: normal;
     font-size: 1.3rem;
     font-weight: 300;
-    width: 60%;
-    /* position: relative; */
-    /* top: 1rem; */
     animation: fadeFromBottom 1.6s forwards;
     animation-delay: calc(var(--fadeoffset) * 200ms);
 }
 
 .middleAboutEducation {
     display: flex;
-    z-index: 2;
     flex-direction: column;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    text-shadow: 2px 2px 12px #000000;
-    font-weight: normal;
     font-size: 1.3rem;
-    font-weight: 300;
-    width: 60%;
-    /* position: relative; */
-    /* top: 1rem; */
+    width: 50%;
     animation: fadeFromBottom 1.6s forwards;
     animation-delay: calc(var(--fadeoffset) * 200ms);
 }
@@ -178,10 +191,8 @@
 
 #middleTwo {
     animation: fadeFromLeft 1.2s forwards;
-    /* margin: auto; */
     margin-top: 6rem;
     margin-bottom: 3rem;
-    /* height: 100%; */
 }
 
 @keyframes fadeFromLeft {
@@ -322,32 +333,28 @@
     }
 }
 
-/* @media (max-width: 600px) {
-    .grid {
-        width: 100%;
-        flex-direction: column;
-    }
-} */
-
-@media (prefers-color-scheme: dark) {
-    .card,
-    .footer {
-        border-color: #222;
-    }
-    .code {
-        background: #111;
-    }
-    .logo img {
-        filter: invert(1);
-    }
-}
-
 /* Make font size smaller if user is on phone  */
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .background .middle {
         font-size: 2rem;
     }
-} */
+    .container .middle {
+        font-size: 1rem;
+    }
+    .chevron {
+        width: 16px;
+        height: 4px;
+    }
+    #bottom {
+        font-size: 1rem;
+    }
+    #middleAbout {
+        font-size: 1rem;
+    }
+    .background .middleAboutEducation .middle {
+        font-size: 2rem;
+    }
+}
 
 .tabs {
     position: relative;
@@ -364,6 +371,7 @@
 
 .tab {
     opacity: 0;
+    color: white;
     text-shadow: 2px 2px 12px #000000;
     animation: fadeFromBottom 1.2s forwards;
     animation-delay: calc(var(--fadeoffset) * 200ms);
@@ -401,11 +409,24 @@
         transform: translateY(0);
     }
 }
-/* @media (max-width: 600px) {
+
+@media (max-width: 600px) {
     .tabs {
         gap: 1.2rem;
     }
     .tab {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
-} */
+}
+
+@media (max-width: 900px) {
+    #aboutTextWrapper {
+        flex-wrap: wrap;
+    }
+    .aboutContainer {
+        width: 100%;
+    }
+    .middleAboutEducation {
+        width: 100%;
+    }
+}
