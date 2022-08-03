@@ -17,12 +17,22 @@ export default function Navbar(props: { className?: string }) {
                 <div
                     className={styles.tab}
                     style={{ ["--fadeoffset" as any]: 3.0 }}
+                    onClick={() => {
+                        document.getElementById("first")?.scrollIntoView({
+                            behavior: "smooth",
+                        });
+                    }}
                 >
                     Projects
                 </div>
                 <div
                     className={styles.tab}
                     style={{ ["--fadeoffset" as any]: 4.0 }}
+                    onClick={() => {
+                        document.getElementById("second")?.scrollIntoView({
+                            behavior: "smooth",
+                        });
+                    }}
                 >
                     Skills
                 </div>

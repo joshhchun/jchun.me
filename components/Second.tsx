@@ -2,6 +2,14 @@ import styles from "../styles/Home.module.css";
 import { Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
 
+
+// /* CSS HEX */
+// --true-blue: #2567BCff;
+// --dark-slate-gray: #3A5052ff;
+// --cafe-au-lait: #A07C55ff;
+// --bone: #E1DAC7ff;
+// --dark-sky-blue: #83BCDDff;
+
 const languages = [
     {
         type: "Python",

@@ -2,6 +2,48 @@ import styles from "../styles/Home.module.css";
 import { Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
 import Navbar from "./Navbar";
+import Image from "next/image";
+
+const slideImages = [
+    {
+        url: "bigsur.jpg",
+        caption: "Slide 1",
+    },
+    {
+        url: "game2.jpg",
+        caption: "Slide 2",
+    },
+    {
+        url: "laguna.jpg",
+        caption: "Slide 3",
+    },
+];
+
+const languages = [
+    {
+        type: "Python",
+        level: 0.9,
+        color: "rgba(156, 193, 230, 0.7)",
+    },
+    {
+        type: "Javascript",
+        level: 0.9,
+        color: "rgba(136, 169, 202, 0.7)",
+    },
+    { type: "C", level: 0.9, color: "rgba(73, 90, 109, 0.7)" },
+    {
+        type: "Typescript",
+        level: 0.81,
+        color: "rgba(136, 169, 202, 0.7)",
+    },
+    { type: "Java", level: 0.79, color: "rgba(73, 90, 109, 0.7)" },
+    { type: "C++", level: 0.79, color: "rgba(73, 90, 109, 0.7)" },
+    {
+        type: "PostgreSQL, MongoDB, MySQL",
+        level: 0.79,
+        color: "rgba(73, 90, 109, 0.7)",
+    },
+];
 
 const About = () => {
     const [ref, inView] = useInView({
@@ -23,7 +65,7 @@ const About = () => {
                                             className={styles.middle}
                                             id={styles.middleAbouth1}
                                         >
-                                            About Me
+                                            Who is Josh?
                                         </div>
                                         <div
                                             className={styles.middle}
@@ -56,11 +98,75 @@ const About = () => {
                                     <div
                                         className={styles.middleAboutEducation}
                                     >
-                                        <div className={styles.middle}>
+                                        {/* {languages.map((skill, index) => (
+                                                <div
+                                                    className={styles.skill}
+                                                    key={index}
+                                                >
+                                                    <div
+                                                        className={
+                                                            styles.nameContainer
+                                                        }
+                                                    >
+                                                        <div
+                                                            className={
+                                                                styles.name
+                                                            }
+                                                            key={skill.type}
+                                                        >
+                                                            {skill.type}
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        className={
+                                                            styles.levelContainer
+                                                        }
+                                                        key={skill.color}
+                                                    >
+                                                        <div
+                                                            className={
+                                                                styles.level
+                                                            }
+                                                            style={{
+                                                                ["--level" as any]:
+                                                                    skill.level,
+                                                                ["--color" as any]:
+                                                                    skill.color,
+                                                                ["--fadeoffset" as any]:
+                                                                    index,
+                                                            }}
+                                                            key={skill.level}
+                                                        ></div>
+                                                    </div>
+                                                </div>
+                                            ))} */}
+                                        <div className={styles.aboutImage}>
+                                            <div
+                                                className={
+                                                    styles.aboutImageContainer
+                                                }
+                                            >
+                                                <img
+                                                    style={{
+                                                        maxWidth: "100%",
+                                                        display: "block",
+                                                    }}
+                                                    // id={styles.aboutPicture}
+                                                    src="game2.jpg"
+                                                    alt="game2"
+                                                ></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* <div
+                                            className={styles.middle}
+                                            id={styles.education}
+                                        >
                                             Education
                                         </div>
                                         <div
-                                            id={styles.bottom}
+                                            className={styles.middle}
+                                            id={styles.middleEducation}
                                             style={{
                                                 ["--fadeoffset" as any]: 3.0,
                                             }}
@@ -74,17 +180,16 @@ const About = () => {
                                             GPA: 3.92
                                         </div>
                                         <div
-                                            id={styles.bottom}
+                                            className={styles.middle}
+                                            id={styles.middleEducation}
                                             style={{
-                                                top: "2rem",
                                                 ["--fadeoffset" as any]: 3.0,
                                             }}
                                         >
                                             Dublin Scioto High School
                                             <br />
                                             GPA: 4.45
-                                        </div>
-                                    </div>
+                                        </div> */}
                                 </div>
                             </>
                         )}
