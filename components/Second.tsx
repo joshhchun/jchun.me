@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
-
+import Image from "next/image";
 
 // /* CSS HEX */
 // --true-blue: #2567BCff;
@@ -60,7 +60,16 @@ const Second = () => {
         <>
             <div ref={ref} id={"second"}>
                 <Scene pin>
-                    <div className={styles.background} id={styles.two}>
+                    {/* <div className={styles.background} id={styles.two}> */}
+                    <div className={styles.background}>
+                        <Image
+                            src="/images/laguna.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="center"
+                            quality={95}
+                            z-index="-1"
+                        />
                         {inView && (
                             <>
                                 <div

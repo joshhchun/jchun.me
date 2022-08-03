@@ -3,6 +3,7 @@ import { Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const First = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -26,6 +27,14 @@ const First = () => {
         <div ref={ref}>
             <Scene pin>
                 <div className={styles.background}>
+                    <Image
+                        src="/images/background_.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="center"
+                        quality={95}
+                        z-index="-1"
+                    />
                     {inView && (
                         <>
                             <div className={styles.textWrapper}>
@@ -48,11 +57,15 @@ const First = () => {
                                             ["--fadeoffset" as any]: 3.0,
                                         }}
                                         onClick={() => {
-                                            document
-                                                .getElementById("first")
-                                                ?.scrollIntoView({
-                                                    behavior: "smooth",
-                                                });
+                                            try {
+                                                document
+                                                    .getElementById("first")
+                                                    ?.scrollIntoView({
+                                                        behavior: "smooth",
+                                                    });
+                                            } catch (error) {
+                                                console.log(error);
+                                            }
                                         }}
                                     >
                                         Projects
@@ -101,6 +114,7 @@ const First = () => {
                             </div>
                         </>
                     )}
+                    {/* </Image> */}
                 </div>
             </Scene>
         </div>

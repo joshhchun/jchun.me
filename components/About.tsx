@@ -1,23 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { Scene } from "react-scrollmagic";
 import { useInView } from "react-intersection-observer";
-import Navbar from "./Navbar";
 import Image from "next/image";
-
-const slideImages = [
-    {
-        url: "bigsur.jpg",
-        caption: "Slide 1",
-    },
-    {
-        url: "game2.jpg",
-        caption: "Slide 2",
-    },
-    {
-        url: "laguna.jpg",
-        caption: "Slide 3",
-    },
-];
 
 const languages = [
     {
@@ -53,7 +37,16 @@ const About = () => {
         <>
             <div ref={ref} id={"first"}>
                 <Scene pin>
-                    <div className={styles.background} id={styles.about}>
+                    {/* <div className={styles.background} id={styles.about}> */}
+                    <div className={styles.background}>
+                        <Image
+                            src="/images/bigsur.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="center"
+                            quality={95}
+                            z-index="-1"
+                        />
                         {inView && (
                             <>
                                 <div
@@ -154,7 +147,7 @@ const About = () => {
                                                             "#000000 0px 0px 10px",
                                                         borderRadius: "10px",
                                                     }}
-                                                    src="images/game2.jpg"
+                                                    src="/images/game2.jpg"
                                                     alt="game2"
                                                 ></img>
                                             </div>
