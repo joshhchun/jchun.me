@@ -150,8 +150,10 @@ const About = () => {
                                                     style={{
                                                         maxWidth: "100%",
                                                         display: "block",
+                                                        boxShadow:
+                                                            "#000000 0px 0px 10px",
+                                                        borderRadius: "10px",
                                                     }}
-                                                    // id={styles.aboutPicture}
                                                     src="game2.jpg"
                                                     alt="game2"
                                                 ></img>
