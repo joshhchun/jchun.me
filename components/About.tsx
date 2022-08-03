@@ -154,7 +154,7 @@ const About = () => {
                                                             "#000000 0px 0px 10px",
                                                         borderRadius: "10px",
                                                     }}
-                                                    src="game2.jpg"
+                                                    src="images/game2.jpg"
                                                     alt="game2"
                                                 ></img>
                                             </div>
