@@ -12,14 +12,14 @@
     background-repeat: no-repeat;
 }
 #about {
-    background-image: url("/images/bigsur.JPG");
+    background-image: url("/images/bigsur.jpg");
 }
 #two {
     background-image: url("/images/bigsur.jpg");
 }
 
 #three {
-    background-image: url("/images/laguna.JPG");
+    background-image: url("/images/laguna.jpg");
 }
 
 /* I am changing skills width from 60 to 100 to test on abt page */
