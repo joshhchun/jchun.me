@@ -532,7 +532,7 @@
     #aboutTextWrapper {
         flex-wrap: wrap;
         margin-top: 3rem;
-        height: 86%;
+        height: 87%;
     }
     .aboutContainer {
         width: 100%;
@@ -550,11 +550,11 @@
         height: 0.6rem;
     }
     .aboutImage {
-        max-width: 250px;
+        max-width: 220px;
         margin: 0px auto 0px;
     }
     .aboutImageContainer::before,
     .aboutImageContainer::after {
-        width: 250px;
+        width: 220px;
     }
 }
