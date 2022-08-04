@@ -5,11 +5,11 @@
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
-    /* background-image: url("/images/background_.jpg"); */
-    /* filter: brightness(95%) saturate(120%); */
-    /* background-position: center;
+    background-image: url("/images/background_.jpg");
+    filter: brightness(95%) saturate(120%);
+    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
 }
 #about {
     background-image: url("/images/bigsur.jpg");
@@ -531,13 +531,14 @@
 @media (max-width: 900px) {
     #aboutTextWrapper {
         flex-wrap: wrap;
-        margin-top: 5rem;
-        height: 95%;
+        margin-top: 3rem;
+        height: 86%;
     }
     .aboutContainer {
         width: 100%;
         height: 40%;
         margin-right: 10%;
+        gap: 1rem;
     }
     .middleAboutEducation {
         width: 100%;

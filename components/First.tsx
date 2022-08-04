@@ -26,15 +26,7 @@ const First = () => {
     return (
         <div ref={ref}>
             <Scene pin>
-                <div className={styles.background}>
-                    <Image
-                        src="/images/background_.jpg"
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="center"
-                        quality={95}
-                        z-index="-1"
-                    />
+                <div className={styles.background} id={styles.one}>
                     {inView && (
                         <>
                             <div className={styles.textWrapper}>

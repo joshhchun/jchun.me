@@ -60,16 +60,7 @@ const Second = () => {
         <>
             <div ref={ref} id={"second"}>
                 <Scene pin>
-                    {/* <div className={styles.background} id={styles.two}> */}
-                    <div className={styles.background}>
-                        <Image
-                            src="/images/laguna.jpg"
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="center"
-                            quality={95}
-                            z-index="-1"
-                        />
+                    <div className={styles.background} id={styles.two}>
                         {inView && (
                             <>
                                 <div

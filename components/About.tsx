@@ -37,16 +37,7 @@ const About = () => {
         <>
             <div ref={ref} id={"first"}>
                 <Scene pin>
-                    {/* <div className={styles.background} id={styles.about}> */}
-                    <div className={styles.background}>
-                        <Image
-                            src="/images/bigsur.jpg"
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="center"
-                            quality={95}
-                            z-index="-1"
-                        />
+                    <div className={styles.background} id={styles.about}>
                         {inView && (
                             <>
                                 <div
